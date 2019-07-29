@@ -1,0 +1,58 @@
+
+<div class="container" *ngIf="productList">
+    <div class="row" *ngFor="let i of rowIndexArray">
+        <div class="mt-2" >
+            <div class="card">
+                <div class="card-header">
+                        <img [src]="productList[3*i].imageurl" class="image-fluid" height="150" width="100">
+                </div>
+                <div class="card-body">
+                        <span class="text-info text-center">{{ productList[3*i].product_name }}</span>                       
+
+                </div>
+                <div class="card-header">
+                        <span class="text-danger text-center">KES. {{ productList[3*i].price }} <i class="fa fa-money ml-2" aria-hidden="true"></i></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="mt-2 ml-3 text-center" *ngIf="productList[3*i+1]" >
+                <div class="card">
+                    <div class="card-header">
+                            <img [src]="productList[3*i+1].imageurl" class="image-fluid" height="150" width="100">
+                    </div>
+                    <div class="card-body">
+                            <span class="text-info text-center">{{ productList[3*i+1].product_name }}</span>
+                            
+                    </div>
+                    <div class="card-header">
+                            <span class="text-danger text-center">KES. {{ productList[3*i+1].price }} <i class="fa fa-money ml-2" aria-hidden="true"></i></span>
+                    </div>
+    
+                </div>
+        </div>
+
+        <div class="mt-2 ml-3" *ngIf="productList[3*i+2]">
+                <div class="card">
+                    <div class="card-header">
+                            <img [src]="productList[3*i+2].imageurl" class="image-fluid" height="150" width="100">
+                    </div>
+                    <div class="card-body">
+                        <span class="text-info text-center">{{ productList[3*i+2].product_name }}</span>
+                            
+                    </div>
+                    <div class="card-header">
+                            <span class="text-danger text-center">KES. {{ productList[3*i+2].price }} <i class="fa fa-money ml-2" aria-hidden="true"></i></span>
+                    </div>
+    
+                </div>
+        </div>
+    </div>
+
+    <div class="form-row " *ngIf="i==0">            
+            <div class="form-group mt-5 col-md-4">
+                <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="btn btn-primary btn-sm btn-block  float-right"> Add Products</a>
+            </div>
+    
+        </div>
+</div>

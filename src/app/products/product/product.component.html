@@ -1,0 +1,57 @@
+<div>
+        <div class="card" style="width:40em">
+            <div class="card-body">
+                <form [formGroup]="formTemplate" (submit)="saveProduct(formTemplate.value)">
+                    <div class="text-center">
+                            <img class="image" [src]="img" width="250" height="150">               
+                    </div>
+                     <div class="form-group">
+                         <label>Choose Product Image</label><br>
+                        <input type="file" accept="image/*"  formControlName="imageurl" (change)="displayPreview($event)">
+                        <div class="text-danger" *ngIf="isSubmitted && formControls.imageurl.errors?.required">This field is required </div>
+                    </div>
+                    
+                    <div class="form-group">
+                            <label>Product Name</label>                      
+                            <input type="text" class="form-control" formControlName="product_name" placeholder="Product Name">
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.product_name.errors?.required">This field is required </div>
+                       </div>
+                    <div class="form-group">
+                        <label>Price</label>                      
+                        <input type="number" class="form-control" formControlName="price" placeholder="Price">
+                        <div class="text-danger" *ngIf="isSubmitted && formControls.price.errors?.required">This field is required </div>
+                    </div>
+                    <div class="form-group"> 
+                            <label>Quantity</label>                     
+                        <input type="number" class="form-control" formControlName="quantity" placeholder="Quantity">
+                        <div class="text-danger" *ngIf="isSubmitted && formControls.quantity.errors?.required">This field is required </div>
+                    </div>
+    
+                    <div class="form-group"> 
+                            <label>Product Category</label>                     
+                       <select class="form-control" formControlName="product_category">
+                           <option value="Electronics">Electronics</option>
+                           <option value="Clothing">Clothing</option>
+                           <option value="Kitchen">Kitchen</option>
+                       </select>
+                        <div class="text-danger" *ngIf="isSubmitted && formControls.quantity.errors?.required">This field is required </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">                      
+                            <button type="submit" class="btn btn-primary btn-sm btn-block float-left">Add Product</button>
+                        </div>
+                        <div class="form-group ml-3 col-md-4">
+                            <a [routerLink]="['/product/view']" routerLinkActive="router-link-active"  class="btn btn-success btn-sm btn-block  float-right"> View Products</a>
+                        </div>
+                
+                    </div>
+                    
+                    
+                    
+    
+                </form>
+            </div>
+    
+        </div>
+    </div>

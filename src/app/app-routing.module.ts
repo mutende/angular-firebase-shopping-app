@@ -11,7 +11,7 @@ import { SignupComponent } from './users/signup/signup.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'product/add',pathMatch:'full'},
+  {path: '', redirectTo: 'product/view',pathMatch:'full'},
   {path: 'product', component:ProductsComponent,children: [
     {path: 'add', component:ProductComponent},
     {path : 'view', component:ProductListComponent}

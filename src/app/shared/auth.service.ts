@@ -35,11 +35,11 @@ export class AuthService {
         
         if (userCredential.user.uid == 'cbL18srurRZ4GVehBHyh3Pqe0Ng1'){
           //redirect to admin page
-          this.router.navigate(['/admin'])
+          this.router.navigate(['/admin']);
         }else{
 
           //redirect to other users
-          this.router.navigate(['/shop'])
+          this.router.navigate(['']);
         }
        
       }

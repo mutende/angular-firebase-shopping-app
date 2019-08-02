@@ -4,6 +4,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import {finalize} from 'rxjs/operators';
 import { ProductService } from 'src/app/shared/product.service';
 
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -11,7 +12,11 @@ import { ProductService } from 'src/app/shared/product.service';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private storage: AngularFireStorage, private service: ProductService) { }
+
+
+  constructor(
+    private storage: AngularFireStorage,
+    private service: ProductService) { }
 
 
   ngOnInit() {

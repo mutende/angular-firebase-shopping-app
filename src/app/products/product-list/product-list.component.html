@@ -1,24 +1,30 @@
-
-<div class="container" *ngIf="productList">
+<div class="col-md-12" *ngIf="productList">
     <div class="row" *ngFor="let i of rowIndexArray">
-        <div class="mt-2" >
+        <div class="mt-2 col-md-3" >
             <div class="card">
-                <div class="card-header">
+                <div class="card-header text-center">
                         <img [src]="productList[3*i].imageurl" class="image-fluid" height="150" width="100">
                 </div>
                 <div class="card-body">
                         <span class="text-info text-center">{{ productList[3*i].product_name }}</span>                       
 
                 </div>
-                <div class="card-header">
+                <div class="card-header text-center">
                         <span class="text-danger text-center">KES. {{ productList[3*i].price }} <i class="fa fa-money ml-2" aria-hidden="true"></i></span>
+                        <div class="mt-3" *ngIf="!user">
+                                        <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="disabled btn btn-primary btn-sm btn-block  float-right">Buy</a>    
+                                </div>
+        
+                                <div class="mt-3" *ngIf="user">
+                                        <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="btn btn-primary btn-sm btn-block  float-right">Buy</a>    
+                                </div>
                 </div>
 
             </div>
         </div>
-        <div class="mt-2 ml-3 text-center" *ngIf="productList[3*i+1]" >
+        <div class="mt-2 ml-3 col-md-3 " *ngIf="productList[3*i+1]" >
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                             <img [src]="productList[3*i+1].imageurl" class="image-fluid" height="150" width="100">
                     </div>
                     <div class="card-body">
@@ -27,14 +33,22 @@
                     </div>
                     <div class="card-header">
                             <span class="text-danger text-center">KES. {{ productList[3*i+1].price }} <i class="fa fa-money ml-2" aria-hidden="true"></i></span>
-                    </div>
+                            
+                            <div class="mt-3" *ngIf="!user">
+                                        <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="disabled btn btn-primary btn-sm btn-block  float-right">Buy</a>    
+                                </div>
+        
+                                <div class="mt-3" *ngIf="user">
+                                        <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="btn btn-primary btn-sm btn-block  float-right">Buy</a>    
+                                </div>
+                        </div>
     
                 </div>
         </div>
 
-        <div class="mt-2 ml-3" *ngIf="productList[3*i+2]">
+        <div class="mt-2 ml-3 col-md-3" *ngIf="productList[3*i+2]">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                             <img [src]="productList[3*i+2].imageurl" class="image-fluid" height="150" width="100">
                     </div>
                     <div class="card-body">
@@ -43,16 +57,18 @@
                     </div>
                     <div class="card-header">
                             <span class="text-danger text-center">KES. {{ productList[3*i+2].price }} <i class="fa fa-money ml-2" aria-hidden="true"></i></span>
+                            <div class="mt-3" *ngIf="!user">
+                                <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="disabled btn btn-primary btn-sm btn-block  float-right">Buy</a>    
+                            </div>
+
+                            <div class="mt-3" *ngIf="user">
+                                        <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="btn btn-primary btn-sm btn-block  float-right">Buy</a>    
+                                </div>
                     </div>
     
                 </div>
         </div>
     </div>
 
-    <div class="form-row " *ngIf="i==0">            
-            <div class="form-group mt-5 col-md-4">
-                <a [routerLink]="['/product/add']" routerLinkActive="router-link-active"  class="btn btn-primary btn-sm btn-block  float-right"> Add Products</a>
-            </div>
-    
-        </div>
+
 </div>

@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import {finalize} from 'rxjs/operators';
 import { ProductService } from 'src/app/shared/product.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private storage: AngularFireStorage,
-    private service: ProductService) { }
+    private service: ProductService,
+    private toastr: ToastrService) { }
 
 
   ngOnInit() {
@@ -63,6 +65,7 @@ export class ProductComponent implements OnInit {
             formValue['imageurl'] = url;
             this.service.addProduct(formValue);
             this.resetForm();
+            this.toastr.success('Product added successfully', 'Added Product');
           })
         })
       ).subscribe();

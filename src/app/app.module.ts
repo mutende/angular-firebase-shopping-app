@@ -9,6 +9,9 @@ import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import { ToastrModule } from 'ngx-toastr';
+
 import { environment } from "../environments/environment";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,7 +44,9 @@ import { SignupComponent } from './users/signup/signup.component';
     ReactiveFormsModule,
     FormsModule,
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

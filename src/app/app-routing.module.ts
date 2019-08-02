@@ -3,11 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
-import { UsersComponent } from './users/users.component';
 import { AdminComponent } from './users/admin/admin.component';
-import { CustomersComponent } from './users/customers/customers.component';
 import { LoginComponent } from './users/login/login.component';
 import { SignupComponent } from './users/signup/signup.component';
+
 
 
 const routes: Routes = [
@@ -19,7 +18,6 @@ const routes: Routes = [
   {path: 'admin', component:AdminComponent},
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent},
-  {path: 'shop', component:CustomersComponent}
 ];
 
 @NgModule({

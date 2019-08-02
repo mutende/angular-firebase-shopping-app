@@ -11,13 +11,14 @@ export class ProductListComponent implements OnInit {
   productList: any[];
   rowIndexArray: any[];
   user: firebase.User;
+  
   constructor(private service: ProductService,   private auth: AuthService) { }
 
   ngOnInit() {
     this.service.productDetailList.snapshotChanges().subscribe(
       list=>{
         this.productList = list.map(item =>{ return item.payload.val();});
-        this.rowIndexArray = Array.from(Array(Math.ceil(this.productList.length / 3)).keys());       
+        this.rowIndexArray = Array.from(Array(Math.ceil(this.productList.length / 3)).keys());            
       }  
       
     );

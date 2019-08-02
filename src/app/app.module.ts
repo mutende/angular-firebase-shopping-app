@@ -18,7 +18,6 @@ import { ProductComponent } from './products/product/product.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { UsersComponent } from './users/users.component';
 import { AdminComponent } from './users/admin/admin.component';
-import { CustomersComponent } from './users/customers/customers.component';
 import { LoginComponent } from './users/login/login.component';
 import { SignupComponent } from './users/signup/signup.component';
 
@@ -30,9 +29,8 @@ import { SignupComponent } from './users/signup/signup.component';
     ProductListComponent,
     UsersComponent,
     AdminComponent,
-    CustomersComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

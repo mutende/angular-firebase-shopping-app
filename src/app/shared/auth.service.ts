@@ -51,7 +51,7 @@ export class AuthService {
     this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
     .then(userCredential =>{
         this.newUser = user;
-        // console.log(userCredential);
+        console.log(userCredential);
         userCredential.user.updateProfile({
           displayName: user.lastname+ ' '+ user.firstname
         });

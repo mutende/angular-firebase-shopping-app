@@ -7,7 +7,7 @@
                                                 <img [src]="productList[3*i].imageurl" class="image-fluid" height="150" width="100">
                                         </div>
                                         <div class="card-body">
-                                                <span class="text-info text-center">{{ productList[3*i].product_name }}</span>                       
+                                                <span class="text-info text-center">{{ productList[3*i].product_name }}</span>                      
                         
                                         </div>
                                         <div class="card-header text-center">
@@ -17,7 +17,13 @@
                                                         </div>
                                 
                                                         <div class="mt-3" *ngIf="user">
-                                                                <button class="btn btn-sm btn-outline-info">Buy</button>
+
+                                                                <form [formGroup]="cart">
+                                                                         <input type="hidden" name="p_name" class="form-control" formControlName="p_name" value="{{ productList[3*i].product_name }}" #p_name>
+                                                                         <input type="hidden" name ="p_price" class="form-control" formControlName="p_price" value="{{ productList[3*i].price }}" #p_price>
+                                                                         <button type="submit" (click) = "createCart(p_name.value, p_price.value)" class="btn btn-sm btn-outline-info">Buy</button>
+                                                                </form>
+                                                                
                                                         </div>
                                         </div>
                         
@@ -40,7 +46,11 @@
                                                         </div>
                                 
                                                         <div class="mt-3" *ngIf="user">
-                                                                        <button class="btn btn-sm btn-outline-info">Buy</button>
+                                                                <form [formGroup]="cart">
+                                                                        <input type="hidden" name="p_name" class="form-control" formControlName="p_name" value="{{ productList[3*i+1].product_name }}" #p_name>
+                                                                        <input type="hidden" name ="p_price" class="form-control" formControlName="p_price" value="{{ productList[3*i+1].price }}" #p_price>
+                                                                        <button type="submit" (click) = "createCart(p_name.value, p_price.value)" class="btn btn-sm btn-outline-info">Buy</button>
+                                                               </form>
                                                         </div>
                                                 </div>
                             
@@ -63,8 +73,11 @@
                                                     </div>
                         
                                                     <div class="mt-3" *ngIf="user">
-                                                                <button class="btn btn-sm btn-outline-info">Buy</button>
-                                                               
+                                                        <form [formGroup]="cart">
+                                                                <input type="hidden" name="p_name" class="form-control" formControlName="p_name" value="{{ productList[3*i+2].product_name }}" #p_name>
+                                                                <input type="hidden" name ="p_price" class="form-control" formControlName="p_price" value="{{ productList[3*i+2].price }}" #p_price>
+                                                                <button type="submit" (click) = "createCart(p_name.value, p_price.value)" class="btn btn-sm btn-outline-info">Buy</button>
+                                                       </form>                                                             
                                                         </div>
                                             </div>
                             
@@ -76,7 +89,16 @@
        </div>
        <div class="col-md-3 text-center" *ngIf="user">
                 
-                         <p>Hello This is a shopping cart</p>                
+                         <p>Cart Display</p>
+                         <ul>
+                                 <li *ngFor="let item of product_name_cart">
+                                         <p>{{item.product_name}}</p>
+
+                                 </li>
+                                 <li *ngFor="let p of product_price_cart">
+                                        <p> {{p.product_price}}</p>
+                                 </li>
+                         </ul>                
                 
 
        </div>

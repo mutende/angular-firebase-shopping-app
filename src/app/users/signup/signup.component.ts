@@ -8,9 +8,13 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class SignupComponent implements OnInit {
 
+  authError: any;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
+    this.auth.eventAuthError$.subscribe(data => {
+      this.authError = data;
+    })
   }
 
   createUser(form){

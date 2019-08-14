@@ -92,11 +92,10 @@
                          <p>Cart Display</p>
                          <ul>
                                  <li *ngFor="let item of product_name_cart">
-                                         <p>{{item.product_name}}</p>
-
+                                        {{ product_name }}
                                  </li>
                                  <li *ngFor="let p of product_price_cart">
-                                        <p> {{p.product_price}}</p>
+                                        {{ product_price }}
                                  </li>
                          </ul>                
                 

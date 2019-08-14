@@ -47,18 +47,15 @@ export class ProductListComponent implements OnInit {
   
   }
 
+  
   createForm() {
     this.cart = this.fb.group({
       p_name: [''],
       p_price: ['']
     });
   }
-  // handle selling
-  isBought: boolean;
-
-  //  
-  //buy function
-
+ 
+  //buy add to cart
   createCart(p_name, p_price){
     this.product_name = p_name;
     this.product_price = p_price;
@@ -69,10 +66,5 @@ export class ProductListComponent implements OnInit {
     console.log(this.product_price_cart);
   }
 
-  buyProduct(){
-    this.isBought = true;
-
-    //clear the arrays
-  }
-
+  
 }

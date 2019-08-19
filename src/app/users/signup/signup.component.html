@@ -12,28 +12,28 @@
     
         <div class="row">
           <div class="col-5 offset-4">
-              <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" autocomplete="off">
+              <form [formGroup]="signupTemplate" (submit)="createUser(signupTemplate.value)" autocomplete="off">
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputEmail4"></label>
-                      <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control" id="inputEmail4" placeholder="First Name">
+                      <input type="text" formControlName="firstname"  class="form-control" id="inputEmail4" placeholder="First Name">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputPassword4"></label>
-                      <input [(ngModel)]="lastname" type="text"  name="lastname" class="form-control" id="inputPassword4" placeholder="Last Name">
+                      <input formControlName="lastname" type="text"  class="form-control" id="inputPassword4" placeholder="Last Name">
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="inputAddress"></label>
-                    <input [(ngModel)]="address"type="text" class="form-control" name="address" id="inputAddress" placeholder="Address">
+                    <input formControlName="address"type="text" class="form-control" id="inputAddress" placeholder="Address">
                   </div>
                   <div class="form-group">
-                    <label for="inputAddress2"></label>
-                    <input [(ngModel)]="email" type="email" class="form-control" name ="email" id="inputAddress2" placeholder="Email">
+                    <label for="Input4Email"></label>
+                    <input formControlName="email" type="email" class="form-control"  id="Input4Email" placeholder="Email">
                   </div>
                   <div class="form-group">
-                      <label for="inputAddress2"></label>
-                      <input [(ngModel)]="password" type="password" name="password" class="form-control" id="inputAddress2" placeholder="Password">
+                      <label for="Input4Password"></label>
+                      <input formControlName="password" type="password"  class="form-control" id="Input4Password" placeholder="Password">
                   </div>
                      <div class="row mt-2 ml-2">
                         <button type="submit" class="btn btn-primary">Create Account</button><a class="nav-link" [routerLink]="['/login']" routerLinkActive="active" >Already have account?</a>

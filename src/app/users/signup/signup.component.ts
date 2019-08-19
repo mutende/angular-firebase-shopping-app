@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +18,29 @@ export class SignupComponent implements OnInit {
     })
   }
 
+  signupTemplate = new FormGroup({    
+
+    lastname : new FormControl(''),
+    firstname : new FormControl(''),
+    address : new FormControl(''),
+    email : new FormControl(''),
+    password : new FormControl('')
+  });
+
+  resetForm(){
+    this.signupTemplate.reset();
+    this.signupTemplate.setValue({
+     
+      lastname : '',
+      firstname : '',
+      address : '',
+      email : '',
+      password : ''
+      
+    });
+  }
+
   createUser(form){
-    this.auth.createUser(form.value)
+     this.auth.createUser(form);
   }
 }

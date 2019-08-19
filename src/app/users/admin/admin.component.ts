@@ -17,14 +17,6 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
 
     this.service.getProductDetailList();
-  
-    // this.service.productDetailList.snapshotChanges().subscribe(
-    //   list=>{
-    //     this.productList = list.map(item =>{ return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil(this.productList.length / 3)).keys());       
-    //   }  
-      
-    // );
 
     this.auth.getuserState().subscribe(user =>{
       this.user = user;      

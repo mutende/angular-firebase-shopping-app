@@ -14,7 +14,6 @@ export class ProductListComponent implements OnInit {
   user: firebase.User;
 
   product_name_cart: any[];
-  product_price_cart: any[];
   product_name : any;
   product_price : any ;
 
@@ -40,9 +39,7 @@ export class ProductListComponent implements OnInit {
       this.user = user;      
     });
 
-    this.product_name_cart = []
-    this.product_price_cart =[]
-  
+    this.product_name_cart = []  
   }
 
   
@@ -57,16 +54,14 @@ export class ProductListComponent implements OnInit {
   createCart(p_name, p_price){
     this.product_name = p_name;
     this.product_price = p_price;
-    this.product_name_cart.push(this.product_name);
-    this.product_price_cart.push(this.product_price);  
+    this.product_name_cart.push({name : this.product_name, price : this.product_price}); 
     this.isBought = true;
   }
 
   clearCart(){
     this.product_name_cart = [];
-    this.product_price_cart = [];
     this.isBought = false;
-    alert('thank you for shopping with us :)')
+    alert('thank you for shopping with sibasi :)')
   }
 
   

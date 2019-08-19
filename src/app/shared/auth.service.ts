@@ -58,7 +58,7 @@ export class AuthService {
         this.insertUserDate(userCredential)
         .then(() =>{
           //redirect after authentication
-          this.router.navigate(['/shop']);
+          this.router.navigate(['']);
         });
     })
     .catch( error =>{

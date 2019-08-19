@@ -17,6 +17,8 @@ export class ProductListComponent implements OnInit {
   product_price_cart: any[];
   product_name : any;
   product_price : any ;
+
+  isBought: boolean = false;
   
   cart : FormGroup;
   constructor(private service: ProductService,   
@@ -38,12 +40,8 @@ export class ProductListComponent implements OnInit {
       this.user = user;      
     });
 
-    this.product_name_cart = [
-      {}
-    ]
-    this.product_price_cart =[
-      {}
-    ]
+    this.product_name_cart = []
+    this.product_price_cart =[]
   
   }
 
@@ -59,11 +57,16 @@ export class ProductListComponent implements OnInit {
   createCart(p_name, p_price){
     this.product_name = p_name;
     this.product_price = p_price;
-    this.product_name_cart.push({name : this.product_name});
-    this.product_price_cart.push({name : this.product_price});
-   
-    console.log(this.product_name_cart);
-    console.log(this.product_price_cart);
+    this.product_name_cart.push(this.product_name);
+    this.product_price_cart.push(this.product_price);  
+    this.isBought = true;
+  }
+
+  clearCart(){
+    this.product_name_cart = [];
+    this.product_price_cart = [];
+    this.isBought = false;
+    alert('thank you for shopping with us :)')
   }
 
   

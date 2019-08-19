@@ -56,7 +56,6 @@
                             
                                         </div>
                                 </div>
-                        
                                 <div class="mt-2 col-md-3" *ngIf="productList[3*i+2]">
                                         <div class="card">
                                             <div class="card-header text-center">
@@ -88,18 +87,29 @@
                             </div>
        </div>
        <div class="col-md-3 text-center" *ngIf="user">
-                
-                         <p>Cart Display</p>
-                         <ul>
-                                 <li *ngFor="let item of product_name_cart">
-                                        {{ product_name }}
-                                 </li>
-                                 <li *ngFor="let p of product_price_cart">
-                                        {{ product_price }}
-                                 </li>
-                         </ul>                
-                
+                <div class="card-header">
+                                <h3>Your Cart</h3>
+                 </div>     
+                        
+                         <div class="row">  
+                                                        
+                                <div class="col-md-6">
+                                        <ul style=" list-style:none;">
+                                         <li *ngFor="let item of product_name_cart">{{ product_name }}</li>
+                                        </ul>          
+                                </div>
 
+                                <div class="col-md-2">
+                                        <ul style=" list-style:none;">
+                                         <li *ngFor="let p of product_price_cart">{{ product_price }}</li>
+                                        </ul>          
+
+                                </div>
+
+                                <button class="btn btn-primary btn-sm ml-auto mr-auto" *ngIf="isBought" (click)="clearCart()">Buy Products</button>
+                
+                         </div>
+                         
        </div>
    
 </div>

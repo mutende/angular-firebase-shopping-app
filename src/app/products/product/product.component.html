@@ -21,9 +21,9 @@
                         <div class="text-danger" *ngIf="isSubmitted && formControls.price.errors?.required">This field is required </div>
                     </div>
                     <div class="form-group"> 
-                            <label>Quantity</label>                     
-                        <input type="number" class="form-control" formControlName="quantity" placeholder="Quantity">
-                        <div class="text-danger" *ngIf="isSubmitted && formControls.quantity.errors?.required">This field is required </div>
+                            <label>Description</label>                     
+                        <textarea col="10" row="3" class="form-control" formControlName="description" placeholder="Description"></textarea>
+                        <div class="text-danger" *ngIf="isSubmitted && formControls.description.errors?.required">This field is required </div>
                     </div>
     
                     <div class="form-group"> 
@@ -32,6 +32,7 @@
                            <option value="Electronics">Electronics</option>
                            <option value="Clothing">Clothing</option>
                            <option value="Kitchen">Kitchen</option>
+                           <option value="Kitchen">Furniture</option>
                        </select>
                         <div class="text-danger" *ngIf="isSubmitted && formControls.quantity.errors?.required">This field is required </div>
                     </div>

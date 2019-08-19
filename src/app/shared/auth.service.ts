@@ -33,7 +33,7 @@ export class AuthService {
     .then(userCredential => {
       if(userCredential){
         
-        if (userCredential.user.uid == 'cbL18srurRZ4GVehBHyh3Pqe0Ng1'){
+        if (userCredential.user.uid == 'WhbLoIQ1YVaeFfjsu1fJuWLpWFW2'){
           //redirect to admin page
           this.router.navigate(['/admin']);
         }else{

@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
   formTemplate = new FormGroup({    
     product_name : new FormControl('', Validators.required),
     price : new FormControl('',Validators.required),
-    quantity : new FormControl('', Validators.required),
+    description : new FormControl('', Validators.required),
     imageurl : new FormControl('', Validators.required),
     product_category: new FormControl('', Validators.required)
   });
@@ -83,7 +83,7 @@ export class ProductComponent implements OnInit {
     this.formTemplate.setValue({
       product_name : '',
       price : '',
-      quantity : '',
+      description : '',
       imageurl : '',
       product_category:'Electronics'
     });

@@ -18,6 +18,7 @@ export class ProductListComponent implements OnInit {
   product_price : any ;
 
   isBought: boolean = false;
+  totalPrice = 0;
   
   cart : FormGroup;
   constructor(private service: ProductService,   
@@ -50,10 +51,14 @@ export class ProductListComponent implements OnInit {
     });
   }
  
-  //buy add to cart
+  //add to cart and show total price
   createCart(p_name, p_price){
     this.product_name = p_name;
     this.product_price = p_price;
+
+    this.totalPrice +=Number(p_price);
+
+    console.log(this.totalPrice);
     this.product_name_cart.push({name : this.product_name, price : this.product_price}); 
     this.isBought = true;
   }
